@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+ <!--<link rel="stylesheet" href="animate.css">-->
+  <style>
+    /*初始化设置*/
+    *{
+      border:none;
+      margin: 0;
+      padding:0;
+    }
+    body,html{
+      width: 100%;
+      height:100%;
+    }
+    .modal{
+      width: 100%;
+      height:100%;
+      background:url('images/1.jpg');
+      position: relative;
+      overflow: hidden;
+      color: #fff;
+    }
+    .box{
+      width: 500px;
+      height: 300px;
+      background:rgba(255,255,255,0.3);
+      position: absolute;
+      top:150px;
+      left:50%;
+      margin-left:-250px;
+      border-radius: 5px;
+      text-align: center;
+    }
+    .btn{
+      width: 150px;
+      height: 45px;
+      line-height:45px;
+      background:#0096D4;
+      margin-top:30px;
+      color: #fff;
+    }
+    .title{
+      width: 100%;
+      height: 60px;
+      background: #C06A83;
+      border-radius: 5px 5px 0 0;
+      display: inline-block;
+      line-height:60px;
+    }
+    .conter{
+      margin:50px auto;
+      background: #C06A83;
+      height: 40px;
+      width: 300px;
+      line-height:40px;
+      border-radius: 20px;
+    }
+
+/*动画*/
+    .animated {
+      animation-duration: 2s;
+      animation-fill-mode: both;
+    }
+
+    @keyframes bounceOutLeft {
+      20% {
+        opacity: 1;
+        transform: translate3d(20px, 0, 0);
+      }
+
+      to {
+        opacity: 0;
+        transform: translate3d(-2000px, 0, 0);
+      }
+    }
+    /*动画类*/
+    .bounceOutLeft {
+      animation-name: bounceOutLeft;
+    }
+
+
+
+  </style>
+</head>
+<body>
+  <div class="modal">
+    <div class="box animated">
+      <div class="title">WHAT ARE YOU LOOKING TO PAY?</div>
+      <div class="conter">Up to $500 a month</div>
+      <button class='btn'>NEXT</button>
+    </div>
+  </div>
+
+</body>
+<script src='jquery-1.12.4.js'></script>
+<script>
+
+$(function () {
+  //当点击事件触发就给box添加一个动画类
+  $('.btn').on('click',function () {
+    $('.box').addClass('bounceOutLeft')
+  })
+
+
+})
+
+</script>
+</html>
